@@ -11,12 +11,13 @@ HELP = (
     '<code>شهر | دسته‌بندی</code>\n\n'
     '<b>مثال‌ها:</b>\n'
     '  <code>تهران | رستوران</code>\n'
-    '  <code>تبریز | دندانپزشک</code>\n'
-    '  <code>مشهد | تعمیرگاه خودرو</code>\n\n'
+    '  <code>زنجان | نصاب دوربین مداربسته</code>\n'
+    '  <code>تبریز | دندانپزشک</code>\n\n'
     '<b>دستورات:</b>\n'
-    '/start - شروع\n'
-    '/help  - راهنما\n'
-    '/status - وضعیت سیستم'
+    '/start    - شروع\n'
+    '/settings - تنظیمات (API key و غیره)\n'
+    '/status   - وضعیت سیستم\n'
+    '/help     - راهنما'
 )
 
 @router.message(Command('start'))
