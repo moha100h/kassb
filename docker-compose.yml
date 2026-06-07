@@ -3,6 +3,8 @@ services:
     build: .
     container_name: kassb_bot
     restart: unless-stopped
-    env_file: .env
+    env_file:
+      - .env
     volumes:
       - ./data:/app/data
+      - ./.env:/app/.env
