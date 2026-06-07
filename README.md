@@ -2,13 +2,13 @@
 
 ربات تلگرام برای جستجو و خروجی اطلاعات کسب‌وکارهای عمومی از OpenStreetMap.
 
-## نصب سریع
+## نصب سریع (یک دستور)
 
 ```bash
-curl -sL https://raw.githubusercontent.com/moha100h/kassb/main/install.sh | bash
+mkdir -p /opt/bots/kassb && cd /opt/bots/kassb && git clone https://github.com/moha100h/kassb.git . && bash install.sh
 ```
 
-فقط **Bot Token** و **Admin ID** می‌پرسد.
+فقط **Bot Token** و **Admin ID** می‌پرسد. بقیه خودکار.
 
 ## نحوه استفاده
 
@@ -20,19 +20,22 @@ curl -sL https://raw.githubusercontent.com/moha100h/kassb/main/install.sh | bash
 مثال‌ها:
 ```
 تهران | رستوران
+زنجان | نصاب دوربین مداربسته
 تبریز | دندانپزشک
-مشهد | تعمیرگاه خودرو
 ```
 
 ## دستورات مفید
 
 ```bash
 # لاگ
-docker-compose -f /opt/kassb/kassb/docker-compose.yml logs -f
+docker logs -f kassb_bot
 
 # ریستارت
-docker-compose -f /opt/kassb/kassb/docker-compose.yml restart
+docker restart kassb_bot
+
+# آپدیت
+cd /opt/bots/kassb && git pull && docker compose up -d --build
 
 # استوپ
-docker-compose -f /opt/kassb/kassb/docker-compose.yml down
+docker compose -f /opt/bots/kassb/docker-compose.yml down
 ```
